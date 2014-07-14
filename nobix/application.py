@@ -14,7 +14,7 @@ class Application(object):
         self.init_logger()
 
         self.create_ui()
-        self.create_connection()
+        self.create_remote_api()
 
         self._run()
 
@@ -31,8 +31,8 @@ class Application(object):
         self.main_window = MainWindow(self)
         self.login_window = LoginWindow(self, get_user=self.get_user)
 
-    def create_connection(self):
-        print("Creating connection to server...")
+    def create_remote_api(self):
+        print("Creating remote api ...")
 
     def _run(self):
         self.loop = MainLoop(self.main_window, input_filter=self.input_filter)
